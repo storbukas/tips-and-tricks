@@ -17,3 +17,21 @@ To add a cron job to your system type
     crontab -e
 
 Append whatever you want to be run to the end of the file in the style shown above
+
+#Time examples#
+
+Every whole hour (10:00, 11:00 and so on)
+
+    00 * * * *
+
+Specific time (someones birthday), 08:30 at 15th of September
+
+    30 08 15 08 *
+
+Twice a day (noon and midnight)
+    
+    00 00,12 * * *
+
+During working hours (backup of data every hour)
+
+    00 08-16 * * *
