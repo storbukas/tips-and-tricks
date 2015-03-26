@@ -82,3 +82,10 @@ This becomes a very tedious job, especially if you have many of this kind or if 
     */5 * * * * command_to_be_run_every_5_mins
 
 This cronjob will run every time the minute equal something divisible by 5, which gives us the result we want: every 5 minutes
+
+Another nifty trick is having a cron job running at a given interval, and also having one running just seconds after that. In this example a cron job will run every minute, and one every minute and 10 seconds.
+
+    * * * * * command_to_be_run
+    * * * * * sleep 10; other_command
+
+Other area of use is if you want something to be sent to a server, and then having the server run something to check if the file has arrived, you could instead of checking a minute later, have the cron job wait 10 seconds (assuming the file is sucessfully transfered within that time).
